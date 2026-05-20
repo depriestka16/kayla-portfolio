@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>kayla-portfolio-site</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root,[data-theme="light"]{--text-xs:clamp(.75rem,.7rem + .25vw,.875rem);--text-sm:clamp(.875rem,.8rem + .35vw,1rem);--text-base:clamp(1rem,.95rem + .25vw,1.125rem);--text-lg:clamp(1.125rem,1rem + .75vw,1.5rem);--text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);--text-2xl:clamp(2rem,1.2rem + 2.5vw,3.5rem);--space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;--space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;--space-12:3rem;--space-16:4rem;--space-20:5rem;--radius-sm:.375rem;--radius-md:.5rem;--radius-lg:.75rem;--radius-xl:1rem;--color-bg:#f7f6f2;--color-surface:#f9f8f5;--color-surface-2:#fbfbf9;--color-surface-offset:#f3f0ec;--color-border:#d4d1ca;--color-divider:#dcd9d5;--color-text:#28251d;--color-text-muted:#66645f;--color-text-faint:#8f8c86;--color-text-inverse:#f9f8f4;--color-primary:#01696f;--color-primary-hover:#0c4e54;--color-primary-highlight:#cedcd8;--color-success:#437a22;--shadow-sm:0 1px 2px rgba(40,37,29,.06);--shadow-md:0 8px 24px rgba(40,37,29,.09);--content-default:960px;--font-display:'Instrument Serif', Georgia, serif;--font-body:'Inter', system-ui, sans-serif;--transition:180ms cubic-bezier(0.16,1,0.3,1)}
+    [data-theme="dark"]{--color-bg:#171614;--color-surface:#1c1b19;--color-surface-2:#201f1d;--color-surface-offset:#1d1c1a;--color-border:#393836;--color-divider:#262523;--color-text:#cdccca;--color-text-muted:#a5a39f;--color-text-faint:#7b7975;--color-text-inverse:#2b2a28;--color-primary:#4f98a3;--color-primary-hover:#227f8b;--color-primary-highlight:#313b3b;--color-success:#6daa45;--shadow-sm:0 1px 2px rgba(0,0,0,.2);--shadow-md:0 10px 30px rgba(0,0,0,.35)}
+    *,*::before,*::after{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:var(--font-body);font-size:var(--text-base);line-height:1.6;background:var(--color-bg);color:var(--color-text)} a{color:var(--color-primary);text-decoration:none} a:hover{color:var(--color-primary-hover)} img,svg{display:block;max-width:100%} h1,h2,h3{line-height:1.1;margin:0 0 var(--space-3)} p{margin:0 0 var(--space-4);max-width:72ch} .container{max-width:var(--content-default);margin:0 auto;padding:0 var(--space-4)} .skip{position:absolute;left:-999px;top:auto}.skip:focus{left:var(--space-4);top:var(--space-4);background:var(--color-surface);padding:var(--space-3);border-radius:var(--radius-sm);z-index:10} header{position:sticky;top:0;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--color-bg) 82%, transparent);border-bottom:1px solid var(--color-divider);z-index:5} .nav{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);min-height:72px}.brand{display:flex;align-items:center;gap:var(--space-3);font-size:var(--text-sm);font-weight:700;color:var(--color-text)} .logo{width:34px;height:34px;color:var(--color-primary)} nav ul{display:flex;gap:var(--space-4);list-style:none;padding:0;margin:0;flex-wrap:wrap} nav a{font-size:var(--text-sm);color:var(--color-text-muted)} nav a:hover,nav a:focus-visible{color:var(--color-text)} .theme-toggle{width:44px;height:44px;border:1px solid color-mix(in srgb,var(--color-text) 12%, transparent);border-radius:999px;display:grid;place-items:center;background:var(--color-surface);color:var(--color-text)} .hero{padding:clamp(var(--space-10),10vw,var(--space-20)) 0 var(--space-12)} .eyebrow{display:inline-flex;align-items:center;gap:var(--space-2);padding:var(--space-2) var(--space-3);font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.12em;background:var(--color-primary-highlight);color:var(--color-primary);border-radius:999px;margin-bottom:var(--space-5)} .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:var(--space-8);align-items:start} .hero h1{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:500;letter-spacing:-.03em;max-width:14ch} .hero .subtitle{font-size:var(--text-lg);color:var(--color-text-muted);max-width:42ch} .hero-card,.section-card,details{background:var(--color-surface);border:1px solid color-mix(in srgb,var(--color-text) 10%, transparent);border-radius:var(--radius-xl);box-shadow:var(--shadow-sm)} .hero-card{padding:var(--space-6)} .fact-list{display:grid;gap:var(--space-3)} .fact{padding-bottom:var(--space-3);border-bottom:1px solid var(--color-divider)} .fact:last-child{padding-bottom:0;border-bottom:0} .fact-label{font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-faint);margin-bottom:var(--space-1)} .fact-value{font-size:var(--text-sm);font-weight:600} .cta-row{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-5)} .btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:.85rem 1.1rem;border-radius:999px;font-size:var(--text-sm);font-weight:600;border:1px solid transparent} .btn-primary{background:var(--color-primary);color:var(--color-text-inverse)} .btn-primary:hover{background:var(--color-primary-hover);color:var(--color-text-inverse)} .btn-secondary{background:var(--color-surface);border-color:color-mix(in srgb,var(--color-text) 12%, transparent);color:var(--color-text)} main section{padding:var(--space-10) 0} .section-head{display:grid;grid-template-columns:.7fr 1.3fr;gap:var(--space-8);margin-bottom:var(--space-6)} .section-kicker{font-size:var(--text-xs);letter-spacing:.12em;text-transform:uppercase;color:var(--color-text-faint);margin-bottom:var(--space-2)} .section-title{font-family:var(--font-display);font-size:var(--text-xl);font-weight:500} .profile-card,.matrix-card,.template-card{padding:var(--space-6)} .highlights{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-4);margin-top:var(--space-5)} .highlight{padding:var(--space-4);background:var(--color-surface-offset);border-radius:var(--radius-lg);border:1px solid color-mix(in srgb,var(--color-text) 8%, transparent)} .highlight h3{font-size:var(--text-sm);font-weight:700;font-family:var(--font-body);margin-bottom:var(--space-2)} .cred-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-4);margin-top:var(--space-4)} .cred{padding:var(--space-4);background:var(--color-surface-offset);border:1px solid color-mix(in srgb,var(--color-text) 8%, transparent);border-radius:var(--radius-lg)} .case-stack{display:grid;gap:var(--space-4)} details{padding:var(--space-5)} summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:start;gap:var(--space-4)} summary::-webkit-details-marker{display:none} .case-meta{font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-faint);margin-bottom:var(--space-2)} .case-title{font-size:var(--text-lg);font-weight:700;margin:0} .case-preview{color:var(--color-text-muted);margin-top:var(--space-2)} .pill{display:inline-flex;align-items:center;padding:.2rem .55rem;background:var(--color-primary-highlight);color:var(--color-primary);border-radius:999px;font-size:var(--text-xs);font-weight:700;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap} .case-body{padding-top:var(--space-4);margin-top:var(--space-4);border-top:1px solid var(--color-divider)} .case-body h4{font-size:var(--text-sm);text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-faint);margin:0 0 var(--space-2)} .case-body p,.case-body li{font-size:var(--text-sm)} .case-body ul{padding-left:1rem;margin:0 0 var(--space-4)} table{width:100%;font-size:var(--text-sm);border-collapse:collapse} th,td{padding:var(--space-3);vertical-align:top;border-top:1px solid var(--color-divider);text-align:left} th{font-size:var(--text-xs);letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-faint)} .template-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-4)} .template-card{background:var(--color-surface)} pre{white-space:pre-wrap;background:var(--color-surface-offset);padding:var(--space-4);border-radius:var(--radius-lg);border:1px solid color-mix(in srgb,var(--color-text) 8%, transparent);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;line-height:1.5;overflow:auto} footer{padding:var(--space-12) 0 var(--space-16);color:var(--color-text-muted)} .print-note{font-size:var(--text-xs);color:var(--color-text-faint)} @media (max-width: 900px){.hero-grid,.section-head,.template-grid,.cred-grid,.highlights{grid-template-columns:1fr}.nav{align-items:flex-start;padding:var(--space-3) 0}nav ul{gap:var(--space-3)} summary{flex-direction:column}} @media print{header,.cta-row,.theme-toggle{display:none !important} body{background:#fff;color:#000;font-size:12pt}.hero,main section,footer{padding:18pt 0}.hero-card,.section-card,details{box-shadow:none;border:1px solid #ccc;background:#fff} details{break-inside:avoid} .container{max-width:none;padding:0}} @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <svg class="logo" viewBox="0 0 48 48" aria-label="KD logo" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2"/>
+          <path d="M15 33V15M15 24H21M31 15L21 24L31 33" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Kayla DePriest</span>
+      </div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#positioning">Positioning</a></li>
+          <li><a href="#cases">Case studies</a></li>
+          <li><a href="#matrix">Skills matrix</a></li>
+          <li><a href="#templates">Templates</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Interview portfolio • ERP & Production Planning Manager</div>
+          <h1>Third-shift POD control tower, ready to scale into ERP and plant-wide planning.</h1>
+          <p class="subtitle">POD-focused HP Indigo 10000/100K operator with cross-functional print and operations experience, using sequencing, data discipline, inventory control, and high-pressure throughput management to protect on-time delivery in Wisconsin manufacturing.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#cases">Open case studies</a>
+            <a class="btn btn-secondary" href="mailto:Kayla.DePriest@gmail.com">Email Kayla</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Professional snapshot">
+          <div class="fact-list">
+            <div class="fact"><div class="fact-label">Name</div><div class="fact-value">Kayla DePriest</div></div>
+            <div class="fact"><div class="fact-label">Target role</div><div class="fact-value">ERP & Production Planning Manager</div></div>
+            <div class="fact"><div class="fact-label">Location</div><div class="fact-value">Hartland, Wisconsin 53029</div></div>
+            <div class="fact"><div class="fact-label">Email</div><div class="fact-value"><a href="mailto:Kayla.DePriest@gmail.com">Kayla.DePriest@gmail.com</a></div></div>
+            <div class="fact"><div class="fact-label">Core systems</div><div class="fact-value">PACE, POD workflow, MRP/MIS, HP Indigo 10000 & 100K</div></div>
+            <div class="fact"><div class="fact-label">Additional press experience</div><div class="fact-value">Komori Lithrone G40P, web press / inkjet, bindery coordination</div></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="positioning">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Career positioning</div>
+            <h2 class="section-title">From operator execution to planning ownership</h2>
+          </div>
+          <div class="section-card profile-card">
+            <p>Third-shift digital press operator in a high-mix, low-volume Wisconsin print manufacturer who already runs the floor like a control tower for POD. I manage roughly 115 files per shift in non-peak periods and up to about 350 files during peak windows across HP Indigo 10000 and 100K presses, sequencing work by downstream process, due date, account grouping, stock readiness, and press capability rather than convenience.</p>
+            <p>I use PACE to log job start, job end, material pulls, sheet counts, and completion status so downstream cutter and folder operations queue correctly. My operating style is built around throughput protection, exception visibility, inventory accuracy, and disciplined shift handoffs that reduce firefighting and help preserve on-time delivery.</p>
+            <p>I also bring prior inventory ownership, cycle-count participation, people leadership, and cross-training experience from earlier print and service roles, including volunteering as interim second pressman on a Komori Lithrone G40P when the company needed support most.</p>
+            <div class="highlights">
+              <div class="highlight"><h3>High-volume pressure</h3><p>Runs third shift under tight turnaround pressure, protecting POD flow in an 8-hour window.</p></div>
+              <div class="highlight"><h3>ERP discipline</h3><p>Uses PACE and related systems every shift to drive traceability, downstream visibility, and queue accuracy.</p></div>
+              <div class="highlight"><h3>Inventory mindset</h3><p>Verifies stock readiness, pulls materials accurately, logs usage, and has prior paper-inventory ownership experience.</p></div>
+              <div class="highlight"><h3>Systems thinking</h3><p>Turns near misses and recurring exceptions into standards, SOPs, and clearer handoff rules.</p></div>
+            </div>
+            <div class="cred-grid">
+              <div class="cred"><strong>Education</strong><br>BS, Communications/PR & Health Promotion</div>
+              <div class="cred"><strong>Safety / process</strong><br>OSHA 30-hour General Industry • PSM I candidate</div>
+              <div class="cred"><strong>Target path</strong><br>ERP & Production Planning Manager • Operations / Materials leadership</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cases">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Management case studies</div>
+            <h2 class="section-title">Proof of manager-level thinking</h2>
+          </div>
+          <div>
+            <p>Each case study is sanitized for confidentiality and written to show throughput ownership, constraint management, communication discipline, and systems thinking rather than machine operation alone.</p>
+          </div>
+        </div>
+        <div class="case-stack">
+          <details open>
+            <summary>
+              <div>
+                <div class="case-meta">Case study 1</div>
+                <h3 class="case-title">Job sequencing and exception triage in high-mix POD</h3>
+                <p class="case-preview">Protected throughput on a third-shift POD queue by sequencing to downstream process needs, triaging ticket/file/stock issues, and keeping the line moving instead of stopping for every discrepancy.</p>
+              </div>
+              <span class="pill">Throughput</span>
+            </summary>
+            <div class="case-body">
+              <h4>Business problem and risk</h4>
+              <p>Third shift carries time-sensitive POD work with tight next-morning requirements while dealing with missing stock, missing files, and ticket mismatches that can disrupt cylinder, stitching, folding, and cutting if not handled quickly.</p>
+              <h4>My role and decisions</h4>
+              <p>I sequence by downstream process path, due date, account grouping, press strengths, and stock availability. During press calibration, I verify files and stock, pre-stage carts, and prepare feeders so changeovers stay controlled. Safe ticket discrepancies are corrected at the press; blocked work is moved into a defined holding path rather than consuming the whole shift.</p>
+              <h4>Cross-functional actions</h4>
+              <ul>
+                <li>Used PACE and POD/MRP workflows to verify readiness before release.</li>
+                <li>Sent consolidated end-of-shift emails to the POD system owner, scheduler, CSRs, and prepress based on issue type and urgency.</li>
+                <li>Created a dedicated basket for scheduler follow-up and coordinated directly with bindery and cylinder on overs, handoff status, and rerouting.</li>
+                <li>Color-coded and stamped discrepancies to speed the next process instead of relying on handwritten notes.</li>
+              </ul>
+              <h4>Result / impact</h4>
+              <p>Beginning-of-shift staging and structured triage save roughly 10–15 minutes per shift in preventable downtime, compounding to about 15 hours per month of recovered productive time in normal conditions. With available files and stock, approximately 99% of jobs still move forward because the system is built to adapt around minor errors rather than stop for them.</p>
+              <h4>Standard work opportunity</h4>
+              <p>This informal control system should become formal ERP/POD standard work: exception categories, ownership routing, overs defaults, and clearer queue logic tied to real downstream needs.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <div>
+                <div class="case-meta">Case study 2</div>
+                <h3 class="case-title">Protecting 98% on-time POD performance with staging standard work</h3>
+                <p class="case-preview">After a misplaced unfinished POD set nearly triggered a financial penalty, created SOP IND-001 to lock down staging, labeling, movement, and ownership across shifts.</p>
+              </div>
+              <span class="pill">On-time delivery</span>
+            </summary>
+            <div class="case-body">
+              <h4>Business problem and risk</h4>
+              <p>An unfinished POD job jacket for a multi-file set was left on a light table without labeling or ownership, then moved, temporarily losing visibility. Leadership later explained that the near miss almost pushed POD performance below the 98% on-time threshold tied to financial penalties.</p>
+              <h4>My role and decisions</h4>
+              <p>I treated the incident as a system failure, not a one-off mistake. Once the operational and financial risk was made clear in a face-to-face discussion with the operations manager, I decided informal staging habits were no longer acceptable for high-priority POD work.</p>
+              <h4>Actions taken</h4>
+              <ul>
+                <li>Drafted and submitted SOP IND-001 within 24 hours of the incident.</li>
+                <li>Defined POD work as high-priority and assigned one dedicated skid location near the Indigo 100K pile feeder.</li>
+                <li>Required visual labels with job ticket number, customer name, operator name, target completion shift/date, and “HIGH PRIORITY – DO NOT MOVE.”</li>
+                <li>Restricted movement authority and required email notification, written notes, log updates, and reasons for any relocation.</li>
+                <li>Linked end-of-shift reporting to staged-work visibility so handoffs could be audited and tracked.</li>
+              </ul>
+              <h4>Result / impact</h4>
+              <p>The SOP removed ambiguous staging behavior and created a default operating path for incomplete POD sets. It reduced the risk of misplaced work, improved accountability across shifts, and connected floor behavior directly to on-time delivery protection and margin preservation.</p>
+              <h4>Standard work opportunity</h4>
+              <p>The next step would be linking high-priority status, owner, and location inside ERP/POD workflows so the physical rule and the system rule match.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <div>
+                <div class="case-meta">Case study 3</div>
+                <h3 class="case-title">Stepping into offset under pressure and driving record-level output</h3>
+                <p class="case-preview">Volunteered as interim second pressman on a Komori Lithrone G40P to onboard a new hire, then helped the crew deliver 70,000 net sheets in one shift and earn company recognition.</p>
+              </div>
+              <span class="pill">Capacity</span>
+            </summary>
+            <div class="case-body">
+              <h4>Business problem and risk</h4>
+              <p>The company needed experienced support on a Komori Lithrone G40P during a critical period, and poor onboarding or weak press support would have hurt production, crew confidence, and shift output.</p>
+              <h4>My role and decisions</h4>
+              <p>I volunteered to step in as interim second pressman because I already had prior Komori exposure and could contribute immediately. I approached the role with a throughput mindset: support the press crew, help stabilize execution, and remove avoidable drag during a high-pressure period.</p>
+              <h4>Actions taken</h4>
+              <ul>
+                <li>Supported onboarding and real-time learning for the new hire while maintaining production pace.</li>
+                <li>Helped the crew execute disciplined make-ready and run strategy instead of chasing rated speed blindly.</li>
+                <li>Worked within real stock, setup, and press constraints rather than theoretical max-speed assumptions.</li>
+              </ul>
+              <h4>Result / impact</h4>
+              <p>Within less than a week on the press, the crew achieved the second-best production record on that machine: 70,000 net saved sheets in one 8-hour shift, earning recognition through the company recognition system. That result matters because the Komori may be rated up to 14,000 sheets per hour, but real-world throughput depends on stock, makeready, changeovers, and crew coordination.</p>
+              <h4>Standard work opportunity</h4>
+              <p>The lesson is not “run at nameplate speed.” It is that strong onboarding, realistic constraints, and disciplined support around the press can move capacity meaningfully even in a challenging production environment.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="matrix">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Skills-gap matrix</div>
+            <h2 class="section-title">Current evidence vs. target-role requirements</h2>
+          </div>
+          <div>
+            <p>This matrix shows current strengths, honest gaps, and a practical action plan to close them without overstating experience.</p>
+          </div>
+        </div>
+        <div class="section-card matrix-card">
+          <table>
+            <thead>
+              <tr>
+                <th>Target skill</th>
+                <th>Current evidence</th>
+                <th>Gap</th>
+                <th>Action plan</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ERP discipline</td>
+                <td>Uses PACE each job for start/end, material pulls, sheet counts, and operation completion; validates POD plus MRP/MIS data before release.</td>
+                <td>No formal ownership of ERP configuration, routings, or dashboards.</td>
+                <td>Position as a PACE power user; shadow planner logic; volunteer for one small data-cleanup domain.</td>
+              </tr>
+              <tr>
+                <td>Inventory accuracy</td>
+                <td>Verifies stock readiness, performs consumables cycle counts, previously managed full digital paper inventory and supply orders, and participated in plant cycle counts.</td>
+                <td>Current role does not own full raw/WIP/FG inventory accuracy.</td>
+                <td>Track stock-related misses, support discrepancy reviews, and highlight prior inventory ownership in interviews.</td>
+              </tr>
+              <tr>
+                <td>Planning & sequencing</td>
+                <td>Sequences 115–350+ files across two Indigos by process path, due date, account grouping, stock, and press strengths; peak season output reached ~2.5× prior expectations.</td>
+                <td>Does not yet own the master schedule or customer commitments.</td>
+                <td>Frame nightly sequencing in capacity language and compare planned load vs. actual output.</td>
+              </tr>
+              <tr>
+                <td>Cross-functional leadership</td>
+                <td>Strong written communication with Ops, scheduler, POD admin, CSRs, bindery, and prepress; prior direct oversight of temp employees and restaurant cross-training.</td>
+                <td>Needs stronger in-person influence and more visible meeting leadership.</td>
+                <td>Lead short huddles, request debriefs after major issues, and keep written structure as support.</td>
+              </tr>
+              <tr>
+                <td>Cost control</td>
+                <td>Protects on-time performance, reduces overs waste, and links floor behavior to penalty avoidance and output recovery.</td>
+                <td>Limited exposure to plant-level cost models and P&amp;L details.</td>
+                <td>Use conservative hours/sheets saved estimates and tie them to failure prevention.</td>
+              </tr>
+              <tr>
+                <td>KPI review</td>
+                <td>Tracks counts, delays, and exceptions; comfortable working from de-identified press CSV data.</td>
+                <td>No formal ownership of KPI board or review cadence.</td>
+                <td>Build simple trend views from safe data and structure a mini KPI section in reporting.</td>
+              </tr>
+              <tr>
+                <td>People leadership</td>
+                <td>Supports onboarding and troubleshooting now; previously led temps and coached teams in restaurant management.</td>
+                <td>No formal leadership title in current org.</td>
+                <td>Document coaching moments and seek ownership of one process standard.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="templates">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Communication samples</div>
+            <h2 class="section-title">Reporting and escalation templates</h2>
+          </div>
+          <div>
+            <p>These samples show concise, evidence-first communication designed to move work, assign ownership, and protect downstream flow.</p>
+          </div>
+        </div>
+        <div class="template-grid">
+          <div class="section-card template-card">
+            <h3>Shift report template</h3>
+            <pre>Subject: Third Shift Indigo Summary – [Date]
+
+Output
+- Jobs completed: [#]
+- Presses run: [10000 / 100K / both]
+- Priority work completed: [brief summary]
+
+Delays / constraints
+- [Issue] – [minutes impact] – [owner / follow-up needed]
+- [Issue] – [minutes impact] – [owner / follow-up needed]
+
+Material / file / ticket exceptions
+- Missing stock: [job/account or category]
+- Missing files: [job/account or category]
+- Ticket corrections needed: [summary]
+
+Downstream handoff
+- Cylinder: [status]
+- Stitching / folding / cutting: [status]
+- Items staged for next shift: [location + reason]
+
+Actions taken
+- [What was corrected, rerouted, or escalated]
+
+Next-shift priorities
+- [Highest-risk or highest-priority items first]</pre>
+          </div>
+          <div class="section-card template-card">
+            <h3>Escalation email template</h3>
+            <pre>Subject: POD Exceptions Requiring Morning Follow-Up – [Date]
+
+Team,
+
+Below is the consolidated list of POD items requiring follow-up from third shift so corrections can be made early and work can continue without additional delay.
+
+1. [Job / item category]
+- Issue: [missing file / stock mismatch / ticket error]
+- Current status: [printed / held / staged]
+- Needed action: [who needs to correct what]
+- Shift impact: [brief note]
+
+2. [Job / item category]
+- Issue: [description]
+- Current status: [description]
+- Needed action: [description]
+- Shift impact: [description]
+
+Hot items escalated separately to prepress / account owner are noted here for visibility.
+
+Please update once corrected so work can be released or completed without additional handoff loss.
+
+Thanks,
+Kayla</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Prepared as a professional interview portfolio for ERP &amp; Production Planning Manager, Operations Manager, and Materials leadership opportunities.</p>
+      <p class="print-note">Tip for GitHub Pages: upload this HTML file to a public repository, rename it to index.html, and enable Pages in repository settings.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      const btn=document.querySelector('[data-theme-toggle]');
+      const root=document.documentElement;
+      let theme=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+      root.setAttribute('data-theme',theme);
+      const render=()=>{btn.setAttribute('aria-label','Switch to '+(theme==='dark'?'light':'dark')+' mode');btn.innerHTML=theme==='dark'?'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>':'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'};
+      render();
+      btn.addEventListener('click',()=>{theme=theme==='dark'?'light':'dark';root.setAttribute('data-theme',theme);render();});
+    })();
+  </script>
+</body>
+</html>
