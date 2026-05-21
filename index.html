@@ -1,894 +1,1046 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ERP and Production Planning Manager transition portfolio for a third-shift digital press operator in high-mix print manufacturing." />
-  <title>ERP & Production Planning Manager Portfolio</title>
+  <meta name="description" content="Portfolio for Kayla Ann De Priest — Third-shift POD control tower transitioning to ERP & Production Planning Manager in print manufacturing." />
+  <title>Kayla Ann De Priest — ERP & Production Planning</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --text-xs: clamp(0.75rem, 0.72rem + 0.18vw, 0.875rem);
-      --text-sm: clamp(0.875rem, 0.84rem + 0.2vw, 1rem);
-      --text-base: clamp(1rem, 0.97rem + 0.22vw, 1.125rem);
-      --text-lg: clamp(1.125rem, 1.02rem + 0.55vw, 1.45rem);
-      --text-xl: clamp(1.55rem, 1.18rem + 1.2vw, 2.25rem);
-      --text-2xl: clamp(2.15rem, 1.5rem + 2.4vw, 3.6rem);
-      --space-1: 0.25rem;
-      --space-2: 0.5rem;
-      --space-3: 0.75rem;
-      --space-4: 1rem;
-      --space-5: 1.25rem;
-      --space-6: 1.5rem;
-      --space-8: 2rem;
-      --space-10: 2.5rem;
-      --space-12: 3rem;
-      --space-16: 4rem;
-      --space-20: 5rem;
-      --space-24: 6rem;
-      --color-bg: #f5f3ef;
-      --color-surface: #fbfaf8;
-      --color-surface-2: #f0ece6;
-      --color-panel: #e8e1d8;
-      --color-border: rgba(39, 33, 25, 0.12);
-      --color-border-strong: rgba(39, 33, 25, 0.22);
-      --color-text: #231d17;
-      --color-text-muted: #5d564f;
-      --color-text-faint: #8a8179;
-      --color-primary: #0f5b63;
-      --color-primary-strong: #0a464c;
-      --color-primary-soft: rgba(15, 91, 99, 0.11);
-      --color-accent: #855b18;
-      --shadow-sm: 0 8px 24px rgba(31, 24, 19, 0.05);
-      --shadow-md: 0 18px 40px rgba(31, 24, 19, 0.08);
-      --radius-sm: 0.5rem;
-      --radius-md: 0.9rem;
-      --radius-lg: 1.35rem;
-      --content: 1160px;
-      --font-body: 'IBM Plex Sans', system-ui, sans-serif;
-      --font-display: 'IBM Plex Serif', Georgia, serif;
-      --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+      --sidebar-w: 240px;
+      --header-h: 56px;
+
+      --ink:        #1a1612;
+      --ink-muted:  #57514a;
+      --ink-faint:  #9a9088;
+      --paper:      #f6f3ee;
+      --paper-2:    #efeae2;
+      --paper-3:    #e6dfd4;
+      --surface:    #faf8f4;
+      --teal:       #0c5c63;
+      --teal-dark:  #09464c;
+      --teal-soft:  rgba(12,92,99,.10);
+      --teal-line:  rgba(12,92,99,.22);
+      --amber:      #8a5c14;
+      --amber-soft: rgba(138,92,20,.10);
+      --border:     rgba(26,22,18,.11);
+      --border-md:  rgba(26,22,18,.18);
+      --shadow-sm:  0 2px 12px rgba(26,22,18,.06);
+      --shadow-md:  0 8px 32px rgba(26,22,18,.10);
+
+      --font-body:    'DM Sans', system-ui, sans-serif;
+      --font-display: 'Crimson Pro', Georgia, serif;
+      --font-mono:    'DM Mono', monospace;
+
+      --text-xs:   0.75rem;
+      --text-sm:   0.875rem;
+      --text-base: 1rem;
+      --text-lg:   1.125rem;
+      --text-xl:   1.375rem;
+      --text-2xl:  1.875rem;
+      --text-3xl:  2.5rem;
+
+      --ease: cubic-bezier(.16,1,.3,1);
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
     body {
       margin: 0;
       font-family: var(--font-body);
       font-size: var(--text-base);
       line-height: 1.65;
-      color: var(--color-text);
-      background:
-        radial-gradient(circle at top right, rgba(15, 91, 99, 0.08), transparent 28%),
-        linear-gradient(180deg, #f7f5f1 0%, var(--color-bg) 52%, #f2eee8 100%);
+      color: var(--ink);
+      background: var(--paper);
+      display: flex;
+      min-height: 100vh;
     }
     img, svg { display: block; max-width: 100%; }
-    a { color: inherit; }
-    p { margin: 0; max-width: 72ch; }
-    h1, h2, h3, h4 { margin: 0; line-height: 1.1; }
+    a { color: inherit; text-decoration: none; }
+    p { margin: 0; }
+    h1,h2,h3,h4,h5 { margin: 0; line-height: 1.15; }
     ul { margin: 0; padding: 0; list-style: none; }
-    .skip-link {
-      position: absolute;
-      left: -999px;
-      top: 0;
-      background: var(--color-text);
-      color: #fff;
-      padding: var(--space-3) var(--space-4);
-      z-index: 1000;
-    }
-    .skip-link:focus { left: var(--space-4); top: var(--space-4); }
-    .page-shell {
-      width: min(calc(100% - 2rem), var(--content));
-      margin: 0 auto;
-      padding-bottom: var(--space-20);
-    }
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(14px);
-      background: rgba(245, 243, 239, 0.88);
-      border-bottom: 1px solid rgba(39, 33, 25, 0.08);
-    }
-    .site-header-inner {
-      width: min(calc(100% - 2rem), var(--content));
-      margin: 0 auto;
+
+    /* ── SKIP LINK ── */
+    .skip { position: absolute; left:-9999px; top:0; background:var(--ink); color:#fff; padding:.5rem 1rem; z-index:200; }
+    .skip:focus { left: 1rem; top: 1rem; }
+
+    /* ══════════════════════════════════════════
+       SIDEBAR
+    ══════════════════════════════════════════ */
+    .sidebar {
+      position: fixed;
+      top: 0; left: 0;
+      width: var(--sidebar-w);
+      height: 100vh;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: var(--space-4);
-      padding: var(--space-4) 0;
+      flex-direction: column;
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      z-index: 100;
+      overflow-y: auto;
     }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: var(--space-3);
-      min-width: 0;
+    .sidebar-brand {
+      padding: 1.5rem 1.25rem 1rem;
+      border-bottom: 1px solid var(--border);
     }
     .brand-mark {
-      width: 2.5rem;
-      height: 2.5rem;
-      border-radius: 0.8rem;
-      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-strong) 100%);
-      color: #fff;
-      display: grid;
-      place-items: center;
-      font-size: 0.92rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      box-shadow: var(--shadow-sm);
-      flex-shrink: 0;
-    }
-    .brand-copy strong {
-      display: block;
-      font-size: var(--text-sm);
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-    .brand-copy span {
-      display: block;
-      font-size: var(--text-xs);
-      color: var(--color-text-muted);
-    }
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: var(--space-2);
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-    .nav a {
-      text-decoration: none;
-      padding: 0.72rem 0.95rem;
-      border-radius: 999px;
-      color: var(--color-text-muted);
-      font-size: var(--text-sm);
-      min-height: 44px;
-      display: inline-flex;
-      align-items: center;
-    }
-    .nav a:hover, .nav a:focus-visible {
-      color: var(--color-text);
-      background: rgba(39, 33, 25, 0.05);
-      outline: none;
-    }
-
-    main { padding-top: var(--space-10); }
-    section { scroll-margin-top: 6rem; }
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.55fr) minmax(300px, 0.95fr);
-      gap: var(--space-8);
-      align-items: stretch;
-      padding: var(--space-8) 0 var(--space-10);
-    }
-    .hero-panel,
-    .hero-aside,
-    .card,
-    .case-card,
-    .template-card,
-    .matrix-card,
-    .footer-card {
-      background: rgba(251, 250, 248, 0.9);
-      border: 1px solid var(--color-border);
-      box-shadow: var(--shadow-sm);
-    }
-    .hero-panel {
-      border-radius: var(--radius-lg);
-      padding: clamp(1.5rem, 2vw, 2.4rem);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.78) 0%, rgba(251,250,248,0.94) 100%),
-        radial-gradient(circle at top right, rgba(15, 91, 99, 0.08), transparent 24%);
-    }
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-2);
-      border-radius: 999px;
-      background: var(--color-primary-soft);
-      color: var(--color-primary-strong);
-      padding: 0.45rem 0.8rem;
-      font-size: var(--text-xs);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: var(--space-5);
-    }
-    .eyebrow::before {
-      content: "";
-      width: 0.5rem;
-      height: 0.5rem;
-      border-radius: 50%;
-      background: var(--color-primary);
-    }
-    h1 {
-      font-family: var(--font-display);
-      font-size: var(--text-2xl);
-      max-width: 13ch;
-      margin-bottom: var(--space-5);
-    }
-    .hero-lead {
-      font-size: var(--text-lg);
-      color: var(--color-text-muted);
-      max-width: 58ch;
-      margin-bottom: var(--space-6);
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: var(--space-4);
-      margin: var(--space-6) 0;
-    }
-    .hero-stat {
-      padding: var(--space-4);
-      border-radius: var(--radius-md);
-      background: var(--color-surface);
-      border: 1px solid rgba(39, 33, 25, 0.08);
-    }
-    .hero-stat strong {
-      display: block;
-      font-size: var(--text-xl);
-      margin-bottom: var(--space-1);
-      color: var(--color-primary-strong);
-      font-variant-numeric: tabular-nums;
-    }
-    .hero-stat span {
-      color: var(--color-text-muted);
-      font-size: var(--text-sm);
-    }
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-3);
-      margin-top: var(--space-6);
-    }
-    .btn {
-      min-height: 46px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: var(--space-2);
-      padding: 0.8rem 1.05rem;
+      width: 2.25rem; height: 2.25rem;
+      border-radius: .6rem;
+      background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+      color: #fff;
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      margin-bottom: .75rem;
+    }
+    .sidebar-brand h1 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.25;
+      margin-bottom: .2rem;
+    }
+    .sidebar-brand p {
+      font-size: var(--text-xs);
+      color: var(--ink-muted);
+      line-height: 1.4;
+    }
+
+    .sidebar-nav {
+      padding: 1rem 0;
+      flex: 1;
+    }
+    .nav-group {
+      margin-bottom: .25rem;
+    }
+    .nav-label {
+      font-size: .68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--ink-faint);
+      padding: .5rem 1.25rem .25rem;
+      display: block;
+    }
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .55rem 1.25rem;
+      font-size: var(--text-sm);
+      color: var(--ink-muted);
+      border-left: 2px solid transparent;
+      transition: all 180ms var(--ease);
+      cursor: pointer;
+    }
+    .nav-link:hover {
+      color: var(--ink);
+      background: var(--paper-2);
+    }
+    .nav-link.active {
+      color: var(--teal-dark);
+      border-left-color: var(--teal);
+      background: var(--teal-soft);
+      font-weight: 500;
+    }
+    .nav-dot {
+      width: .4rem; height: .4rem;
+      border-radius: 50%;
+      background: currentColor;
+      opacity: .45;
+      flex-shrink: 0;
+    }
+
+    .sidebar-footer {
+      padding: 1rem 1.25rem;
+      border-top: 1px solid var(--border);
+      font-size: var(--text-xs);
+      color: var(--ink-faint);
+    }
+
+    /* ══════════════════════════════════════════
+       MAIN CONTENT
+    ══════════════════════════════════════════ */
+    .main {
+      margin-left: var(--sidebar-w);
+      flex: 1;
+      min-width: 0;
+      padding: 2.5rem 3rem 5rem;
+      max-width: 900px;
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      margin-bottom: 4rem;
+      scroll-margin-top: 2rem;
+    }
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: var(--text-xs);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .09em;
+      color: var(--amber);
+      margin-bottom: .75rem;
+    }
+    .section-eyebrow::before {
+      content: '';
+      display: block;
+      width: 1.5rem; height: 1px;
+      background: var(--amber);
+      opacity: .6;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: .5rem;
+    }
+    .section-lead {
+      font-size: var(--text-lg);
+      color: var(--ink-muted);
+      max-width: 60ch;
+      margin-bottom: 1.75rem;
+    }
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    /* ── OVERVIEW ── */
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .overview-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: .75rem;
+      padding: 1.1rem 1.25rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .overview-card .label {
+      font-size: var(--text-xs);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--ink-faint);
+      margin-bottom: .3rem;
+    }
+    .overview-card .value {
+      font-size: var(--text-sm);
+      color: var(--ink);
+      line-height: 1.5;
+    }
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: .75rem;
+      margin: 1.5rem 0;
+    }
+    .stat-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: .65rem;
+      padding: .9rem 1rem;
+      text-align: center;
+    }
+    .stat-box strong {
+      display: block;
+      font-size: var(--text-xl);
+      color: var(--teal-dark);
+      font-weight: 600;
+      margin-bottom: .2rem;
+      font-family: var(--font-mono);
+    }
+    .stat-box span {
+      font-size: var(--text-xs);
+      color: var(--ink-muted);
+      line-height: 1.4;
+    }
+    .cta-row {
+      display: flex;
+      gap: .75rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .6rem 1.1rem;
       border-radius: 999px;
       font-size: var(--text-sm);
-      font-weight: 600;
-      text-decoration: none;
-      transition: transform var(--transition), background var(--transition), color var(--transition), border-color var(--transition);
+      font-weight: 500;
       border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 160ms var(--ease);
     }
-    .btn:hover, .btn:focus-visible { transform: translateY(-1px); outline: none; }
-    .btn-primary { background: var(--color-primary); color: #fff; }
-    .btn-primary:hover, .btn-primary:focus-visible { background: var(--color-primary-strong); }
-    .btn-secondary {
-      border-color: var(--color-border-strong);
-      background: transparent;
-      color: var(--color-text);
-    }
-    .btn-secondary:hover, .btn-secondary:focus-visible { background: rgba(39, 33, 25, 0.05); }
+    .btn-primary { background: var(--teal); color: #fff; }
+    .btn-primary:hover { background: var(--teal-dark); }
+    .btn-secondary { background: transparent; border-color: var(--border-md); color: var(--ink); }
+    .btn-secondary:hover { background: var(--paper-2); }
 
-    .hero-aside {
-      border-radius: var(--radius-lg);
-      padding: clamp(1.3rem, 2vw, 2rem);
-      display: grid;
-      gap: var(--space-5);
-      align-content: start;
-      background:
-        linear-gradient(180deg, rgba(240,236,230,0.9) 0%, rgba(251,250,248,0.95) 100%);
-    }
-    .hero-aside h2,
-    .section-heading h2 {
-      font-family: var(--font-display);
-      font-size: var(--text-xl);
-      margin-bottom: var(--space-3);
-    }
-    .hero-list {
-      display: grid;
-      gap: var(--space-4);
-    }
-    .hero-list li {
-      padding-bottom: var(--space-4);
-      border-bottom: 1px solid rgba(39, 33, 25, 0.08);
-    }
-    .hero-list li:last-child { border-bottom: none; padding-bottom: 0; }
-    .hero-list strong {
-      display: block;
-      margin-bottom: var(--space-1);
-      font-size: var(--text-sm);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--color-text-muted);
-    }
-
-    .section-heading {
+    /* ── CREDENTIALS STRIP ── */
+    .cred-strip {
       display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: var(--space-4);
-      margin-bottom: var(--space-6);
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-top: 1.25rem;
     }
-    .section-heading p { color: var(--color-text-muted); }
-    .section-tag {
-      color: var(--color-accent);
+    .cred-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      padding: .3rem .75rem;
+      border-radius: 999px;
+      border: 1px solid var(--border-md);
       font-size: var(--text-xs);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-weight: 700;
-      margin-bottom: var(--space-2);
-      display: block;
+      font-weight: 500;
+      color: var(--ink-muted);
+      background: var(--surface);
+    }
+    .cred-pill.highlight {
+      border-color: var(--teal-line);
+      background: var(--teal-soft);
+      color: var(--teal-dark);
     }
 
-    .snapshot {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: var(--space-4);
-      margin: 0 0 var(--space-16);
+    /* ── WORK HISTORY ── */
+    .timeline {
+      position: relative;
+      padding-left: 1.5rem;
     }
-    .card {
-      border-radius: var(--radius-md);
-      padding: var(--space-5);
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: .35rem;
+      top: .4rem;
+      bottom: 0;
+      width: 1px;
+      background: var(--border-md);
     }
-    .card h3 {
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -1.22rem;
+      top: .45rem;
+      width: .6rem; height: .6rem;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 2px solid var(--teal);
+    }
+    .timeline-item.current::before {
+      background: var(--teal);
+    }
+    .job-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: .5rem;
+      margin-bottom: .35rem;
+    }
+    .job-title {
+      font-weight: 600;
+      font-size: var(--text-base);
+      color: var(--ink);
+    }
+    .job-tenure {
+      font-size: var(--text-xs);
+      font-family: var(--font-mono);
+      color: var(--ink-faint);
+      white-space: nowrap;
+    }
+    .job-employer {
       font-size: var(--text-sm);
+      color: var(--teal-dark);
+      font-weight: 500;
+      margin-bottom: .5rem;
+    }
+    .job-body {
+      font-size: var(--text-sm);
+      color: var(--ink-muted);
+      line-height: 1.65;
+    }
+    .job-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .35rem;
+      margin-top: .6rem;
+    }
+    .tag {
+      font-size: .7rem;
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--color-text-muted);
-      margin-bottom: var(--space-3);
+      letter-spacing: .06em;
+      padding: .2rem .55rem;
+      border-radius: 999px;
+      background: var(--paper-2);
+      color: var(--ink-muted);
     }
-    .card p { color: var(--color-text); }
+    .tag.teal {
+      background: var(--teal-soft);
+      color: var(--teal-dark);
+    }
 
-    .case-studies {
-      display: grid;
-      gap: var(--space-6);
-      margin-bottom: var(--space-16);
-    }
+    /* ── CASE CARDS ── */
     .case-card {
-      border-radius: var(--radius-lg);
-      padding: clamp(1.25rem, 2vw, 2rem);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin-bottom: 1.25rem;
+      box-shadow: var(--shadow-sm);
     }
     .case-card.featured {
-      border-color: rgba(15, 91, 99, 0.26);
-      box-shadow: var(--shadow-md);
+      border-color: var(--teal-line);
       background:
-        linear-gradient(180deg, rgba(15,91,99,0.08) 0%, rgba(251,250,248,0.96) 18%, rgba(251,250,248,0.96) 100%);
+        linear-gradient(160deg, rgba(12,92,99,.06) 0%, var(--surface) 30%);
+      box-shadow: var(--shadow-md);
     }
     .case-top {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      justify-content: space-between;
-      gap: var(--space-3);
-      margin-bottom: var(--space-5);
-    }
-    .case-labels {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-2);
+      gap: .5rem;
+      margin-bottom: .9rem;
     }
     .pill {
       display: inline-flex;
       align-items: center;
-      min-height: 36px;
-      padding: 0.35rem 0.7rem;
+      padding: .2rem .65rem;
       border-radius: 999px;
-      background: rgba(39, 33, 25, 0.05);
-      color: var(--color-text-muted);
-      font-size: var(--text-xs);
-      font-weight: 700;
-      letter-spacing: 0.05em;
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .05em;
       text-transform: uppercase;
+      background: var(--paper-2);
+      color: var(--ink-muted);
     }
     .pill.primary {
-      background: var(--color-primary-soft);
-      color: var(--color-primary-strong);
+      background: var(--teal-soft);
+      color: var(--teal-dark);
     }
     .case-title {
       font-family: var(--font-display);
-      font-size: clamp(1.55rem, 1.2rem + 1vw, 2.15rem);
-      margin-bottom: var(--space-3);
-      max-width: 20ch;
+      font-size: var(--text-xl);
+      font-weight: 600;
+      margin-bottom: .5rem;
     }
     .case-summary {
-      font-size: var(--text-lg);
-      color: var(--color-text-muted);
-      margin-bottom: var(--space-6);
+      font-size: var(--text-sm);
+      color: var(--ink-muted);
+      margin-bottom: 1.1rem;
       max-width: 64ch;
     }
     .case-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: var(--space-4);
+      grid-template-columns: repeat(2, 1fr);
+      gap: .75rem;
     }
     .case-block {
-      padding: var(--space-4);
-      border-radius: var(--radius-md);
-      background: rgba(255,255,255,0.62);
-      border: 1px solid rgba(39, 33, 25, 0.08);
+      background: rgba(255,255,255,.65);
+      border: 1px solid var(--border);
+      border-radius: .6rem;
+      padding: .9rem 1rem;
     }
     .case-block h4 {
-      font-size: var(--text-sm);
-      margin-bottom: var(--space-3);
-      color: var(--color-text-muted);
+      font-size: .7rem;
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: .07em;
+      color: var(--ink-faint);
+      margin-bottom: .5rem;
     }
-    .case-block p + p,
-    .case-block li + li { margin-top: var(--space-2); }
-    .case-block ul { display: grid; gap: var(--space-2); }
+    .case-block p, .case-block li {
+      font-size: var(--text-sm);
+      color: var(--ink-muted);
+      line-height: 1.6;
+    }
+    .case-block ul { display: grid; gap: .3rem; }
+    .case-block li::before { content: '→ '; color: var(--teal); font-weight: 600; }
 
-    .two-column {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-      gap: var(--space-6);
-      margin-bottom: var(--space-16);
-    }
-    .matrix-card,
-    .template-card,
-    .footer-card {
-      border-radius: var(--radius-lg);
-      padding: clamp(1.25rem, 2vw, 2rem);
-    }
+    /* ── SKILLS MATRIX ── */
     .matrix-wrap { overflow-x: auto; }
     table {
       width: 100%;
       border-collapse: collapse;
-      min-width: 720px;
       font-size: var(--text-sm);
-    }
-    th, td {
-      text-align: left;
-      vertical-align: top;
-      padding: 0.95rem 0.85rem;
-      border-bottom: 1px solid rgba(39, 33, 25, 0.08);
+      min-width: 640px;
     }
     th {
+      text-align: left;
       font-size: var(--text-xs);
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--color-text-muted);
-      background: rgba(39, 33, 25, 0.035);
+      letter-spacing: .07em;
+      color: var(--ink-faint);
+      padding: .65rem .85rem;
+      background: var(--paper-2);
+      border-bottom: 1px solid var(--border-md);
     }
-    td strong { display: block; margin-bottom: 0.2rem; }
+    td {
+      padding: .8rem .85rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      color: var(--ink-muted);
+      line-height: 1.55;
+    }
+    td strong {
+      display: block;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: .2rem;
+      font-size: var(--text-sm);
+    }
+    tr:last-child td { border-bottom: none; }
 
-    .template-stack {
-      display: grid;
-      gap: var(--space-5);
+    /* gap badge */
+    .gap-badge {
+      display: inline-block;
+      font-size: .68rem;
+      font-weight: 600;
+      padding: .15rem .5rem;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: .05em;
     }
-    .template {
-      border: 1px solid rgba(39, 33, 25, 0.08);
-      border-radius: var(--radius-md);
-      background: rgba(255,255,255,0.56);
+    .gap-low  { background: rgba(12,92,99,.1);  color: var(--teal-dark); }
+    .gap-mid  { background: rgba(138,92,20,.1); color: var(--amber); }
+    .gap-high { background: rgba(180,40,40,.08); color: #8a2020; }
+
+    /* ── TEMPLATES ── */
+    .template-box {
+      border: 1px solid var(--border);
+      border-radius: .75rem;
       overflow: hidden;
+      margin-bottom: 1rem;
+      background: var(--surface);
     }
-    .template header {
-      padding: var(--space-4) var(--space-5);
-      border-bottom: 1px solid rgba(39, 33, 25, 0.08);
-      background: rgba(39, 33, 25, 0.03);
+    .template-header {
+      padding: .7rem 1.1rem;
+      background: var(--paper-2);
+      border-bottom: 1px solid var(--border);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--ink);
     }
-    .template header h3 {
-      font-size: var(--text-base);
-      text-transform: none;
-      letter-spacing: 0;
-      color: var(--color-text);
-      margin: 0;
-    }
-    .template pre {
-      margin: 0;
-      padding: var(--space-5);
+    .template-body {
+      padding: 1.1rem;
+      font-family: var(--font-mono);
+      font-size: .78rem;
+      line-height: 1.75;
+      color: var(--ink-muted);
       white-space: pre-wrap;
       word-break: break-word;
-      font-family: 'IBM Plex Sans', system-ui, sans-serif;
-      font-size: var(--text-sm);
-      line-height: 1.7;
-      color: var(--color-text-muted);
-      background: transparent;
     }
 
-    .footer-card {
+    /* ── ROLE FIT ── */
+    .fit-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-      gap: var(--space-6);
+      grid-template-columns: 1.1fr .9fr;
+      gap: 1.5rem;
       align-items: start;
     }
-    .footer-card ul {
-      display: grid;
-      gap: var(--space-3);
-      color: var(--color-text-muted);
+    .fit-prose {
+      font-size: var(--text-base);
+      color: var(--ink-muted);
+      line-height: 1.7;
     }
-    .print-note {
-      margin-top: var(--space-4);
-      color: var(--color-text-faint);
+    .fit-prose p + p { margin-top: .9rem; }
+    .fit-list {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: .75rem;
+      padding: 1.1rem 1.25rem;
+    }
+    .fit-list li {
       font-size: var(--text-sm);
+      color: var(--ink-muted);
+      padding: .55rem 0;
+      border-bottom: 1px solid var(--border);
+      line-height: 1.5;
+    }
+    .fit-list li:last-child { border-bottom: none; padding-bottom: 0; }
+    .fit-list li strong { color: var(--ink); }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .footer-quote {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-style: italic;
+      color: var(--ink-muted);
+      line-height: 1.55;
+      max-width: 52ch;
+    }
+    .footer-meta {
+      margin-top: 1.25rem;
+      font-size: var(--text-xs);
+      color: var(--ink-faint);
     }
 
-    footer {
-      padding: var(--space-12) 0 var(--space-4);
-      color: var(--color-text-faint);
-      font-size: var(--text-sm);
-      text-align: center;
+    /* ══════════════════════════════════════════
+       ACTIVE NAV — JS SCROLL SPY
+    ══════════════════════════════════════════ */
+
+    /* ══════════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════════ */
+    @media (max-width: 900px) {
+      :root { --sidebar-w: 200px; }
+      .main { padding: 2rem 1.75rem 4rem; }
+      .stat-row { grid-template-columns: repeat(2, 1fr); }
+      .case-grid { grid-template-columns: 1fr; }
+      .fit-grid { grid-template-columns: 1fr; }
     }
 
-    @media (max-width: 1080px) {
-      .hero,
-      .two-column,
-      .footer-card {
-        grid-template-columns: 1fr;
+    @media (max-width: 680px) {
+      .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
       }
-      .snapshot { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .case-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-
-    @media (max-width: 760px) {
-      .site-header { position: static; }
-      .site-header-inner,
-      .section-heading {
-        align-items: start;
-        flex-direction: column;
-      }
-      .nav { width: 100%; justify-content: flex-start; }
-      .hero { padding-top: var(--space-4); }
-      .hero-grid,
-      .snapshot,
-      .case-grid {
-        grid-template-columns: 1fr;
-      }
-      .page-shell,
-      .site-header-inner { width: min(calc(100% - 1.25rem), var(--content)); }
-      .hero-panel,
-      .hero-aside,
-      .card,
-      .case-card,
-      .matrix-card,
-      .template-card,
-      .footer-card { padding: var(--space-5); }
-      table { min-width: 640px; }
+      .sidebar-brand { border-bottom: none; border-right: 1px solid var(--border); padding: .75rem 1rem; }
+      .sidebar-brand h1 { font-size: .9rem; }
+      .sidebar-brand p { display: none; }
+      .sidebar-nav { display: flex; flex-wrap: wrap; padding: .5rem .75rem; flex: 1; }
+      .nav-label { display: none; }
+      .nav-link { padding: .4rem .75rem; border-left: none; border-bottom: 2px solid transparent; }
+      .nav-link.active { border-left-color: transparent; border-bottom-color: var(--teal); }
+      .sidebar-footer { display: none; }
+      body { flex-direction: column; }
+      .main { margin-left: 0; padding: 1.5rem 1.25rem 3rem; }
+      .overview-grid { grid-template-columns: 1fr; }
+      .stat-row { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media print {
-      :root {
-        --color-bg: #ffffff;
-        --color-surface: #ffffff;
-        --color-surface-2: #ffffff;
-        --color-panel: #ffffff;
-        --shadow-sm: none;
-        --shadow-md: none;
-      }
-      body {
-        background: #fff;
-        color: #000;
-        font-size: 11pt;
-      }
-      .site-header,
-      .hero-actions { display: none !important; }
-      .page-shell { width: 100%; max-width: none; padding: 0; }
-      .hero,
-      .two-column,
-      .footer-card,
-      .snapshot,
-      .case-grid { grid-template-columns: 1fr 1fr; }
-      .hero-panel,
-      .hero-aside,
-      .card,
-      .case-card,
-      .matrix-card,
-      .template-card,
-      .footer-card {
-        break-inside: avoid;
-        border: 1px solid #cfcfcf;
-        background: #fff;
-      }
-      a { text-decoration: none; color: inherit; }
-      .case-card.featured { background: #fff; }
-      footer { padding-bottom: 0; }
+      .sidebar { position: static; width: 100%; height: auto; border: none; flex-direction: column; }
+      .main { margin-left: 0; padding: 1rem; }
+      .case-card { break-inside: avoid; }
     }
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#content">Skip to content</a>
-  <header class="site-header">
-    <div class="site-header-inner">
-      <div class="brand" aria-label="Portfolio identity">
-        <div class="brand-mark" aria-hidden="true">ERP</div>
-        <div class="brand-copy">
-          <strong>Print planning portfolio</strong>
-          <span>Third-shift POD control tower → ERP &amp; Production Planning Manager</span>
-        </div>
-      </div>
-      <nav class="nav" aria-label="Section navigation">
-        <a href="#case-studies">Case studies</a>
-        <a href="#matrix">Skills matrix</a>
-        <a href="#templates">Templates</a>
-        <a href="#fit">Role fit</a>
-      </nav>
+  <a class="skip" href="#overview">Skip to content</a>
+
+  <!-- ══ SIDEBAR ══ -->
+  <nav class="sidebar" aria-label="Portfolio navigation">
+    <div class="sidebar-brand">
+      <div class="brand-mark">ERP</div>
+      <h1>Kayla Ann De Priest</h1>
+      <p>Third-shift POD control tower → ERP &amp; Production Planning Manager</p>
     </div>
-  </header>
 
-  <main id="content" class="page-shell">
-    <section class="hero" aria-labelledby="hero-title">
-      <article class="hero-panel">
-        <div class="eyebrow">High-mix print manufacturing • Wisconsin-ready</div>
-        <h1 id="hero-title">I already operate like a third-shift POD control tower. The next step is owning ERP and plant-wide planning.</h1>
-        <p class="hero-lead">I run third shift on HP Indigo 10000 and HP Indigo 100K presses in a high-mix print shop. The queue changes constantly—missing files, wrong stock, ticket errors, morning deadlines. My job is to keep work moving and leave accurate PACE records so the next shift and the next process aren't starting from a mess.</p>
-        <p>I sequence by what's actually needed downstream: due date, what bindery needs first, which press handles each job better, and whether the stock is physically on hand. That's not extra effort—it's just how the shift has to run. This portfolio is built around showing that thinking, not just the fact that I can operate the equipment.</p>
+    <div class="sidebar-nav">
+      <div class="nav-group">
+        <span class="nav-label">Portfolio</span>
+        <a class="nav-link active" href="#overview">
+          <span class="nav-dot"></span>Overview
+        </a>
+        <a class="nav-link" href="#history">
+          <span class="nav-dot"></span>Work History
+        </a>
+      </div>
+      <div class="nav-group">
+        <span class="nav-label">Evidence</span>
+        <a class="nav-link" href="#erp">
+          <span class="nav-dot"></span>ERP &amp; Systems
+        </a>
+        <a class="nav-link" href="#planning">
+          <span class="nav-dot"></span>Planning &amp; Scheduling
+        </a>
+        <a class="nav-link" href="#process">
+          <span class="nav-dot"></span>Process &amp; People
+        </a>
+        <a class="nav-link" href="#kpi">
+          <span class="nav-dot"></span>KPIs &amp; Reporting
+        </a>
+      </div>
+      <div class="nav-group">
+        <span class="nav-label">Fit</span>
+        <a class="nav-link" href="#matrix">
+          <span class="nav-dot"></span>Skills Matrix
+        </a>
+        <a class="nav-link" href="#rolefit">
+          <span class="nav-dot"></span>Role Fit
+        </a>
+      </div>
+    </div>
 
-        <div class="hero-grid" aria-label="Operating scope snapshots">
-          <div class="hero-stat">
-            <strong>115–350</strong>
-            <span>Files managed depending on season and load</span>
+    <div class="sidebar-footer">
+      Hartland, WI · Print manufacturing
+    </div>
+  </nav>
+
+  <!-- ══ MAIN ══ -->
+  <main class="main" id="content">
+
+    <!-- ── OVERVIEW ── -->
+    <section class="section" id="overview">
+      <div class="section-eyebrow">High-mix print manufacturing · Wisconsin-ready</div>
+      <h2 class="section-title">I already operate like a third-shift POD control tower. The next step is owning ERP and plant-wide planning.</h2>
+      <p class="section-lead">I run third shift on HP Indigo 10000 and HP Indigo 100K presses in a high-mix print shop. The queue changes constantly — missing files, wrong stock, ticket errors, morning deadlines. My job is to keep work moving and leave accurate records so the next shift and the next process aren't starting from a mess.</p>
+      <p style="color:var(--ink-muted); max-width:66ch; margin-bottom:1rem;">I sequence by what's actually needed downstream: due date, what bindery needs first, which press handles each job better, and whether the stock is physically on hand. That's not extra effort — it's just how the shift has to run. This portfolio is built around showing that thinking, not just the fact that I can operate the equipment.</p>
+
+      <div class="stat-row" aria-label="Operating scope">
+        <div class="stat-box">
+          <strong>115–350</strong>
+          <span>Files sequenced per shift by season and load</span>
+        </div>
+        <div class="stat-box">
+          <strong>PACE</strong>
+          <span>Job start, end, pulls, counts, and operation completion</span>
+        </div>
+        <div class="stat-box">
+          <strong>2 Indigos</strong>
+          <span>HP 10000 and 100K in POD flow</span>
+        </div>
+        <div class="stat-box">
+          <strong>10+ yrs</strong>
+          <span>Across print manufacturing, supply chain, and operations</span>
+        </div>
+      </div>
+
+      <div class="overview-grid">
+        <div class="overview-card">
+          <div class="label">Where I'm strongest</div>
+          <div class="value">ERP transaction discipline, inventory accuracy, documentation, and written communication across shifts and departments.</div>
+        </div>
+        <div class="overview-card">
+          <div class="label">How I operate</div>
+          <div class="value">Direct, keep notes on everything, and when something breaks I want to understand why so it doesn't break the same way twice.</div>
+        </div>
+        <div class="overview-card">
+          <div class="label">Growth area</div>
+          <div class="value">In-person communication presence and more visible room-level leadership. I know that's where the work is.</div>
+        </div>
+        <div class="overview-card">
+          <div class="label">Target role</div>
+          <div class="value">ERP &amp; Production Planning Manager — CL&amp;D / ProMach, Hartland, WI</div>
+        </div>
+      </div>
+
+      <div class="cred-strip" aria-label="Credentials">
+        <span class="cred-pill highlight">BS Communications · PR Emphasis</span>
+        <span class="cred-pill highlight">PSM1 Candidate — Exam Ready</span>
+        <span class="cred-pill">OSHA 30-Hour General Industry</span>
+        <span class="cred-pill">AED &amp; CPR — Current</span>
+        <span class="cred-pill">Bloodborne Pathogen Certified</span>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#history">See full work history</a>
+        <a class="btn btn-secondary" href="#matrix">Skills-gap matrix</a>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ── WORK HISTORY ── -->
+    <section class="section" id="history">
+      <div class="section-eyebrow">Work history</div>
+      <h2 class="section-title">10+ years across print, manufacturing, and operations</h2>
+      <p class="section-lead">Every role below connects to the planning, scheduling, inventory, or people leadership requirements of the target position. Nothing is inflated — each entry reflects what was actually owned and done.</p>
+
+      <div class="timeline">
+
+        <div class="timeline-item current">
+          <div class="job-header">
+            <span class="job-title">Digital Press Operator — Third Shift</span>
+            <span class="job-tenure">3+ yrs · Current</span>
           </div>
-          <div class="hero-stat">
-            <strong>PACE</strong>
-            <span>Used for job start, job end, pulls, counts, and operation completion</span>
-          </div>
-          <div class="hero-stat">
-            <strong>2 Indigos</strong>
-            <span>HP Indigo 10000 and HP Indigo 100K in POD flow</span>
-          </div>
-          <div class="hero-stat">
-            <strong>Offset support</strong>
-            <span>Interim second pressman support on Komori Lithrone G40P</span>
+          <div class="job-employer">Print Manufacturing · Hartland, WI area</div>
+          <p class="job-body">Own the full third-shift POD queue on HP Indigo 10000 and HP Indigo 100K presses. Sequence 115–350 jobs per shift by due date, downstream process path, stock availability, and press capability. Use PACE for every job start, end, material pull, sheet count, and operation completion. Write daily shift reports and immediate escalation emails for significant delays so the plant scheduler can make adjustments before first shift arrives. Draft SOPs as incidents occur and propose them to the operations manager. Cross-trained as fill-in operator on the inkjet envelope press.</p>
+          <div class="job-tags">
+            <span class="tag teal">PACE ERP</span>
+            <span class="tag teal">Queue sequencing</span>
+            <span class="tag teal">SOP authorship</span>
+            <span class="tag">HP Indigo 10000</span>
+            <span class="tag">HP Indigo 100K</span>
+            <span class="tag">Inkjet envelope press</span>
           </div>
         </div>
 
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#case-studies">Review operating proof</a>
-          <a class="btn btn-secondary" href="#matrix">See skills-gap matrix</a>
+        <div class="timeline-item">
+          <div class="job-header">
+            <span class="job-title">Second Pressman — Sheet-fed Offset</span>
+            <span class="job-tenure">1 yr</span>
+          </div>
+          <div class="job-employer">Print Manufacturing</div>
+          <p class="job-body">Operated as second pressman on a Komori Lithrone G40P. Supported make-ready, run strategy, and crew coordination. During a critical staffing period, contributed to a 70,000-net-sheet shift within the first week — the second-best production record on that machine — by working within real press, stock, and setup constraints instead of chasing nameplate speed.</p>
+          <div class="job-tags">
+            <span class="tag teal">Komori Lithrone G40P</span>
+            <span class="tag">Offset press</span>
+            <span class="tag">Make-ready</span>
+            <span class="tag">Production records</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="job-header">
+            <span class="job-title">Inkjet Web Press Operator</span>
+            <span class="job-tenure">3.5 yrs</span>
+          </div>
+          <div class="job-employer">Quad/Graphics</div>
+          <p class="job-body">Operated custom web inkjet presses in a high-volume, fast-paced manufacturing environment. Aggressively completed every available training course offered: leadership, roll tender, second pressman, 3-part color, dryers (8-hour), and inkjet operator certification. Managed 1–5 temp and end-of-line employees per shift — with new temps possible any night, shift-start training was non-negotiable and had to be structured and fast. Responsible for sample pulls, quality pulls, and active support of roller tender, second pressman, and first pressman. Maintained transparency with downstream operators and flagged upstream inconsistencies to prevent recurring issues.</p>
+          <div class="job-tags">
+            <span class="tag teal">People leadership</span>
+            <span class="tag teal">Temp onboarding</span>
+            <span class="tag">High-volume manufacturing</span>
+            <span class="tag">Quality control</span>
+            <span class="tag">Cross-training</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="job-header">
+            <span class="job-title">Operations Support — Paper &amp; Logistics</span>
+            <span class="job-tenure">1 yr</span>
+          </div>
+          <div class="job-employer">Paper Sales / Print Supply</div>
+          <p class="job-body">Managed paper sales and orders, coordinated logistics for internal shuttle routes, processed freight shipments, and handled daily and monthly administrative reporting. Participated in bi-annual cycle counts across inventory. Maintained accurate records for order flow and internal distribution — direct supply chain and inventory ownership in a manufacturing support environment.</p>
+          <div class="job-tags">
+            <span class="tag teal">Cycle counts</span>
+            <span class="tag teal">Logistics coordination</span>
+            <span class="tag">Freight management</span>
+            <span class="tag">Inventory reporting</span>
+            <span class="tag">Supply chain</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="job-header">
+            <span class="job-title">Digital Department Manager</span>
+            <span class="job-tenure">2 yrs</span>
+          </div>
+          <div class="job-employer">Print Service Provider</div>
+          <p class="job-body">Owned the full digital print workflow across several printers. Managed inventory and supply orders for the department. Staff floated between prepress and digital to extend run hours — which meant coordinating shared resources and scheduling coverage without formal scheduling authority. Used PrintSmith with end-to-end job scanning for job tracking. Previously in the same organization as a customer service rep, creating job estimates, building jobs in the system, and assisting walk-in accounts before transitioning to the manager role.</p>
+          <div class="job-tags">
+            <span class="tag teal">PrintSmith MIS</span>
+            <span class="tag teal">Workflow ownership</span>
+            <span class="tag teal">Inventory management</span>
+            <span class="tag">Supply orders</span>
+            <span class="tag">Job estimating</span>
+            <span class="tag">Resource scheduling</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="job-header">
+            <span class="job-title">Assistant Manager</span>
+            <span class="job-tenure">Prior</span>
+          </div>
+          <div class="job-employer">Fast-casual Restaurant · Louisiana</div>
+          <p class="job-body">Managed 5–10 employees per shift depending on expected volume — higher on weekends and during parade season, which required demand-driven staffing decisions made in advance. Ordered food inventory three times per week, handled nearly all bank deposits, conducted initial screening interviews, and coached employees on the floor. Performed weekly total inventory counts. Forecasted daily prep volumes for peak periods — the same capacity-planning logic that applies to press loading and shift scheduling in manufacturing.</p>
+          <div class="job-tags">
+            <span class="tag teal">People leadership</span>
+            <span class="tag teal">Weekly inventory</span>
+            <span class="tag teal">Demand forecasting</span>
+            <span class="tag">Procurement cycles</span>
+            <span class="tag">Interviewing</span>
+            <span class="tag">Coaching</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="job-header">
+            <span class="job-title">Production &amp; Distribution Coordinator</span>
+            <span class="job-tenure">5+ yrs</span>
+          </div>
+          <div class="job-employer">Newspaper / Advertising Publisher · Greater Milwaukee area</div>
+          <p class="job-body">Managed bookkeeping for the classifieds department, designed display ads on production day under deadline, and coordinated the distribution of over 30,000 advertising books weekly across the Greater Milwaukee area — all within a single business day. Later transitioned into customer service for the print side, creating job estimates, building jobs in the system, and assisting walk-in accounts. This is where print manufacturing, production deadlines, and logistics thinking first became second nature.</p>
+          <div class="job-tags">
+            <span class="tag">Distribution logistics</span>
+            <span class="tag">Production scheduling</span>
+            <span class="tag">Bookkeeping</span>
+            <span class="tag">Print production</span>
+            <span class="tag">Job estimating</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ── ERP & SYSTEMS ── -->
+    <section class="section" id="erp">
+      <div class="section-eyebrow">ERP &amp; System Discipline</div>
+      <h2 class="section-title">Two print MIS platforms, daily transactional fluency, and a clear view of where the data breaks</h2>
+      <p class="section-lead">I've worked in PACE and PrintSmith across 5+ years of active manufacturing use. I don't own ERP configuration — that's stated plainly in the skills matrix. What I do own is the discipline to keep transactions accurate and the instinct to flag when the system and the floor don't match.</p>
+
+      <div class="overview-grid" style="margin-bottom:1.5rem;">
+        <div class="overview-card">
+          <div class="label">PACE · Current role (3+ yrs)</div>
+          <div class="value">Job start and end, material pulls, sheet counts, operation completion, POD and MRP/MIS data validation before release. Used every shift without exception.</div>
+        </div>
+        <div class="overview-card">
+          <div class="label">PrintSmith · Digital manager role (2 yrs)</div>
+          <div class="value">End-to-end job tracking with scanning system across the full shop workflow. Job creation, estimating, inventory, and handoff visibility across departments.</div>
+        </div>
+        <div class="overview-card">
+          <div class="label">Data integrity observation</div>
+          <div class="value">I flag duplicate entries and items missing from inventory that I'm unable to pull. Some customer-specific stock is tracked outside PACE entirely — a system gap I've identified but don't yet have authority to fix at the configuration level.</div>
+        </div>
+        <div class="overview-card">
+          <div class="label">Development area</div>
+          <div class="value">Formal ERP configuration, routing setup, master data governance, and dashboard ownership. No formal experience yet — acknowledged directly in the skills matrix. I pick up systems quickly and have a track record of completing every available training when given access.</div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ── PLANNING & SCHEDULING ── -->
+    <section class="section" id="planning">
+      <div class="section-eyebrow">Planning &amp; Scheduling</div>
+      <h2 class="section-title">Keeping third-shift POD moving when the queue is a mess</h2>
+      <p class="section-lead">Every third shift starts with a queue of roughly 115 to 350 jobs that need sorting before the first sheet hits the feeder. Some have missing files, wrong stock, or bad ticket specs that would kill output — or worse, reach bindery already wrong.</p>
+
+      <article class="case-card featured">
+        <div class="case-top">
+          <span class="pill primary">Featured case</span>
+          <span class="pill">Queue sequencing</span>
+          <span class="pill">ERP discipline</span>
+          <span class="pill">High-mix POD</span>
+        </div>
+        <h3 class="case-title">Sequencing and exception management in third-shift POD</h3>
+        <p class="case-summary">Protecting output when due dates are next-morning and the queue has gaps in it.</p>
+        <div class="case-grid">
+          <div class="case-block">
+            <h4>The real problem</h4>
+            <p>POD jobs on third shift often have next-morning due dates. A missing file, a stock substitution that wasn't caught, or a ticket with wrong specs doesn't just stall the press — it backs up cylinder, stitching, and cutting too if it gets through without being flagged first.</p>
+          </div>
+          <div class="case-block">
+            <h4>What I actually do</h4>
+            <p>I sequence the queue early — before the presses are warmed up — by due date, what bindery needs first, which press each job actually runs better on, and whether the stock is physically on hand. Calibration time is when I verify files and stage carts, not improvise mid-run.</p>
+          </div>
+          <div class="case-block">
+            <h4>Cross-department connections</h4>
+            <ul>
+              <li>Check job readiness against PACE and POD records before printing, not after.</li>
+              <li>Send one consolidated email at shift end: what ran, what's held, what needs morning follow-up, and who owns the fix.</li>
+              <li>Keep a physical basket near the scheduler's area for anything that needs a decision the next shift can't make alone.</li>
+              <li>Stamp and label anything going downstream with discrepancy info so bindery and cylinder aren't guessing.</li>
+            </ul>
+          </div>
+          <div class="case-block">
+            <h4>What it adds up to</h4>
+            <p>Beginning-of-shift prep saves roughly 10–15 minutes of preventable downtime per shift. Fewer errors reach bindery and cylinder. The morning shift has something organized to pick up. What's currently informal should eventually live in ERP with defined exception categories and named owners.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ── PROCESS & PEOPLE ── -->
+    <section class="section" id="process">
+      <div class="section-eyebrow">Process &amp; People</div>
+      <h2 class="section-title">SOPs written from real incidents, and people leadership across three different environments</h2>
+      <p class="section-lead">Process standardization is an ongoing habit here, not a one-time event. And the people leadership spans restaurant forecasting, temp onboarding with no ramp time, and shared staff coordination in a digital department.</p>
+
+      <article class="case-card" style="margin-bottom:1.25rem;">
+        <div class="case-top">
+          <span class="pill primary">SOP case</span>
+          <span class="pill">On-time delivery</span>
+          <span class="pill">Risk control</span>
+        </div>
+        <h3 class="case-title">Protecting 98% on-time POD performance with staging standard work</h3>
+        <p class="case-summary">After a misplaced unfinished POD set nearly triggered a financial penalty, I treated it as a system failure and wrote SOP IND-001 within 24 hours.</p>
+        <div class="case-grid">
+          <div class="case-block">
+            <h4>What happened</h4>
+            <p>An unfinished POD job jacket for a multi-file set lost visibility after being left without clear labeling or ownership, creating real on-time delivery and financial penalty risk.</p>
+          </div>
+          <div class="case-block">
+            <h4>My response</h4>
+            <p>Once the operational and financial risk was made clear, I decided informal staging habits were no longer acceptable for high-priority POD work. Drafted and submitted SOP IND-001 within 24 hours.</p>
+          </div>
+          <div class="case-block">
+            <h4>What the SOP defined</h4>
+            <ul>
+              <li>Dedicated skid location near the Indigo 100K pile feeder.</li>
+              <li>Visual labels with job ticket number, customer, operator, target shift/date, and do-not-move warning.</li>
+              <li>Movement authority linked to end-of-shift reporting for auditable handoff visibility.</li>
+            </ul>
+          </div>
+          <div class="case-block">
+            <h4>The pattern</h4>
+            <p>IND-001 is one example of an ongoing practice. I write SOPs as incidents happen, propose them to the operations manager, and pass the practices along to other operators on the floor. The goal is always waste reduction and penalty avoidance.</p>
+          </div>
         </div>
       </article>
 
-      <aside class="hero-aside" aria-labelledby="positioning-title">
-        <div>
-          <span class="section-tag">Positioning</span>
-          <h2 id="positioning-title">What I'm bringing to a planning role</h2>
-          <p>This is for production planning and ERP hiring managers who care more about whether someone actually runs the floor right than whether their resume sounds impressive. I'm not claiming I already own the schedule. I'm showing what operator-level discipline looks like and why it transfers.</p>
+      <article class="case-card">
+        <div class="case-top">
+          <span class="pill primary">People case</span>
+          <span class="pill">Capacity</span>
+          <span class="pill">Komori Lithrone G40P</span>
         </div>
-        <ul class="hero-list">
-          <li>
-            <strong>Current role</strong>
-            Third-shift Digital Press Operator in a high-mix, low-volume print shop.
-          </li>
-          <li>
-            <strong>Where I'm strongest</strong>
-            ERP transaction discipline, inventory accuracy, documentation, and written communication across shifts and departments.
-          </li>
-          <li>
-            <strong>Growth area</strong>
-            In-person communication presence and more visible room-level leadership. I know that's where the work is.
-          </li>
-          <li>
-            <strong>How I operate</strong>
-            Direct, keep notes on everything, and when something breaks I want to understand why so it doesn't break the same way twice.
-          </li>
-        </ul>
-      </aside>
-    </section>
-
-    <section aria-labelledby="snapshot-title">
-      <div class="section-heading">
-        <div>
-          <span class="section-tag">Manager-level signal</span>
-          <h2 id="snapshot-title">What a hiring manager should see fast</h2>
-        </div>
-        <p>Kayla Ann De Priest | Hartland, WI</p>
-      </div>
-      <div class="snapshot">
-        <article class="card">
-          <h3>Throughput lens</h3>
-          <p>I keep work moving by separating fix-now issues from blocked work, protecting the shift from death by small interruptions.</p>
-        </article>
-        <article class="card">
-          <h3>ERP discipline</h3>
-          <p>I use PACE every shift because inaccurate closes, pulls, or counts create false signals for planning and downstream departments.</p>
-        </article>
-        <article class="card">
-          <h3>Inventory mindset</h3>
-          <p>I verify stock readiness, log usage accurately, and treat material errors as planning failures, not floor trivia.</p>
-        </article>
-        <article class="card">
-          <h3>Standard work</h3>
-          <p>When a near miss shows a system weakness, my default response is to tighten the process, document it, and make ownership visible.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="case-studies" aria-labelledby="case-title">
-      <div class="section-heading">
-        <div>
-          <span class="section-tag">Case studies</span>
-          <h2 id="case-title">Proof of planning judgment, not just machine skill</h2>
-        </div>
-        <p></p>
-      </div>
-
-      <div class="case-studies">
-        <article class="case-card featured">
-          <div class="case-top">
-            <div class="case-labels">
-              <span class="pill primary">Featured case</span>
-              <span class="pill">Throughput</span>
-              <span class="pill">ERP discipline</span>
-            </div>
-            <span class="pill">High-mix POD</span>
+        <h3 class="case-title">Stepping into offset under pressure and supporting record-level output</h3>
+        <p class="case-summary">Volunteered as interim second pressman support on the Komori during a critical period, onboarded a new hire, and contributed to 70,000 net sheets in one shift.</p>
+        <div class="case-grid">
+          <div class="case-block">
+            <h4>The situation</h4>
+            <p>The company needed experienced support on the Komori. Weak onboarding or poor support would have hurt production pace, crew confidence, and usable output.</p>
           </div>
-          <h3 class="case-title">Keeping third-shift POD moving when the queue is a mess</h3>
-          <p class="case-summary">Every third shift starts with a queue of roughly 115 to 350 jobs that need sorting before the first sheet hits the feeder. Some have missing files, wrong stock, or bad ticket specs that would kill output—or worse, reach bindery already wrong. Here's how I manage that so the shift actually finishes.</p>
-          <div class="case-grid">
-            <div class="case-block">
-              <h4>The real problem</h4>
-              <p>POD jobs on third shift often have next-morning due dates. A missing file, a stock substitution that wasn't caught, or a ticket with wrong specs doesn't just stall the press—it backs up cylinder, stitching, and cutting too if it gets through without being flagged first.</p>
-            </div>
-            <div class="case-block">
-              <h4>What I actually do</h4>
-              <p>I sequence the queue early—before the presses are warmed up—by due date, what bindery needs first, which press each job actually runs better on, and whether the stock is physically on hand. Calibration time is when I verify files and stage the carts, not improvise mid-run.</p>
-            </div>
-            <div class="case-block">
-              <h4>How it connects to other departments</h4>
-              <ul>
-                <li>Check job readiness against PACE and POD records before printing, not after.</li>
-                <li>Send one consolidated email at shift end: what ran, what's held, what needs morning follow-up, and who owns the fix.</li>
-                <li>Keep a physical basket near the scheduler's area for anything that needs a decision the next shift can't make alone.</li>
-                <li>Stamp and label anything going downstream with discrepancy info so bindery and cylinder aren't guessing.</li>
-              </ul>
-            </div>
-            <div class="case-block">
-              <h4>What it adds up to</h4>
-              <p>The beginning-of-shift prep saves roughly 10–15 minutes of preventable downtime per shift. The bigger value is that fewer errors reach bindery and cylinder, and the morning shift has something organized to pick up rather than a pile of unknowns. What's currently informal should eventually live in ERP with defined exception categories and named owners.</p>
-            </div>
+          <div class="case-block">
+            <h4>My role</h4>
+            <p>I stepped in because I had prior Komori exposure and could contribute quickly. My focus was to remove avoidable drag and stabilize the crew under pressure — not to take over or inflate my contribution.</p>
           </div>
-        </article>
-
-        <article class="case-card">
-          <div class="case-top">
-            <div class="case-labels">
-              <span class="pill">On-time delivery</span>
-              <span class="pill">SOP ownership</span>
-            </div>
-            <span class="pill">Risk control</span>
+          <div class="case-block">
+            <h4>Actions</h4>
+            <ul>
+              <li>Supported onboarding and real-time learning for the new hire.</li>
+              <li>Helped the crew execute disciplined make-ready and run strategy.</li>
+              <li>Worked within real stock, setup, and press constraints instead of chasing nameplate speed.</li>
+            </ul>
           </div>
-          <h3 class="case-title">Protecting 98% on-time POD performance with staging standard work</h3>
-          <p class="case-summary">After a misplaced unfinished POD set nearly triggered a financial penalty, I treated the event as a system failure and wrote SOP IND-001 to tighten staging, labeling, movement, and ownership across shifts.</p>
-          <div class="case-grid">
-            <div class="case-block">
-              <h4>Business problem</h4>
-              <p>An unfinished POD job jacket for a multi-file set lost visibility after being left without clear labeling or ownership, creating real on-time delivery risk.</p>
-            </div>
-            <div class="case-block">
-              <h4>My response</h4>
-              <p>Once the operational and financial risk was made clear, I decided informal staging habits were no longer acceptable for high-priority POD work.</p>
-            </div>
-            <div class="case-block">
-              <h4>Actions taken</h4>
-              <ul>
-                <li>Drafted and submitted SOP IND-001 within 24 hours.</li>
-                <li>Defined a dedicated skid location near the Indigo 100K pile feeder.</li>
-                <li>Required visual labels with job ticket number, customer name, operator, target shift/date, and a do-not-move warning.</li>
-                <li>Linked movement authority and end-of-shift reporting to auditable handoff visibility.</li>
-              </ul>
-            </div>
-            <div class="case-block">
-              <h4>Result and next step</h4>
-              <p>The SOP removed ambiguity, improved accountability, and tied floor behavior directly to on-time delivery protection. The logical next move is to link priority status, owner, and location inside ERP / POD workflows so the physical rule and system rule match.</p>
-            </div>
+          <div class="case-block">
+            <h4>Result</h4>
+            <p>Within less than a week, the crew hit 70,000 net saved sheets in one shift — the second-best record on that machine. Realistic constraints and disciplined crew support moved capacity more than heroic assumptions would have.</p>
           </div>
-        </article>
-
-        <article class="case-card">
-          <div class="case-top">
-            <div class="case-labels">
-              <span class="pill">Capacity</span>
-              <span class="pill">Cross-training</span>
-            </div>
-            <span class="pill">Komori Lithrone G40P</span>
-          </div>
-          <h3 class="case-title">Stepping into offset under pressure and supporting record-level output</h3>
-          <p class="case-summary">I volunteered as interim second pressman support on a Komori Lithrone G40P during a critical period, helped onboard a new hire, and contributed to a 70,000-net-sheet shift through disciplined support rather than inflated speed claims.</p>
-          <div class="case-grid">
-            <div class="case-block">
-              <h4>Business problem</h4>
-              <p>The company needed experienced support on the Komori during a critical period. Weak onboarding or poor support would have hurt production pace, crew confidence, and usable output.</p>
-            </div>
-            <div class="case-block">
-              <h4>My role</h4>
-              <p>I stepped in because I had prior Komori exposure and could contribute quickly. My focus was to remove avoidable drag and stabilize the crew under pressure.</p>
-            </div>
-            <div class="case-block">
-              <h4>Actions taken</h4>
-              <ul>
-                <li>Supported onboarding and real-time learning for the new hire.</li>
-                <li>Helped the crew execute disciplined make-ready and run strategy.</li>
-                <li>Worked within real stock, setup, and press constraints instead of chasing nameplate speed.</li>
-              </ul>
-            </div>
-            <div class="case-block">
-              <h4>Result and lesson</h4>
-              <p>Within less than a week on the press, the crew achieved the second-best production record on that machine: 70,000 net saved sheets in one shift. The lesson is that realistic constraints, strong onboarding, and disciplined crew support move capacity more than heroic assumptions.</p>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="matrix" class="two-column" aria-labelledby="matrix-title">
-      <article class="matrix-card">
-        <div class="section-heading">
-          <div>
-            <span class="section-tag">Skills-gap matrix</span>
-            <h2 id="matrix-title">Current evidence vs. target-role requirements</h2>
-          </div>
-        </div>
-        <div class="matrix-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Target skill</th>
-                <th>Current evidence</th>
-                <th>Gap</th>
-                <th>Action plan</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>ERP discipline</strong></td>
-                <td>Uses PACE each job for start/end, material pulls, sheet counts, and operation completion; validates POD plus MRP/MIS data before release.</td>
-                <td>No formal ownership of ERP configuration, routings, or dashboards.</td>
-                <td>Position as a PACE power user, shadow planner logic, and volunteer for one controlled data-cleanup domain.</td>
-              </tr>
-              <tr>
-                <td><strong>Inventory accuracy</strong></td>
-                <td>Verifies stock readiness, performs consumables cycle counts, previously managed digital paper inventory and supply orders, and participated in plant cycle counts.</td>
-                <td>Current role does not own full raw, WIP, or finished goods accuracy.</td>
-                <td>Track stock-related misses, support discrepancy reviews, and make prior inventory ownership easy to see in interviews.</td>
-              </tr>
-              <tr>
-                <td><strong>Planning and sequencing</strong></td>
-                <td>Sequences roughly 115 to 350 files across two Indigos by process path, due date, account grouping, stock, and press strengths.</td>
-                <td>Does not yet own the master schedule or customer commitments.</td>
-                <td>Frame nightly sequencing in capacity language and compare planned load vs. actual output.</td>
-              </tr>
-              <tr>
-                <td><strong>Cross-functional leadership</strong></td>
-                <td>Strong written communication with operations, scheduler, POD admin, CSRs, bindery, and prepress; prior direct oversight of temporary employees and restaurant cross-training.</td>
-                <td>Needs stronger in-person influence and more visible meeting leadership.</td>
-                <td>Lead short huddles, request post-issue debriefs, and use written structure to reinforce verbal clarity.</td>
-              </tr>
-              <tr>
-                <td><strong>Cost control</strong></td>
-                <td>Protects on-time performance, reduces overs waste, and connects floor behavior to penalty avoidance and output recovery.</td>
-                <td>Limited exposure to full plant cost models and P&amp;L detail.</td>
-                <td>Use conservative hours and waste-avoidance estimates, then tie them to failure prevention instead of inflated savings claims.</td>
-              </tr>
-              <tr>
-                <td><strong>KPI review</strong></td>
-                <td>Tracks counts, delays, and exceptions and is comfortable working from de-identified press CSV data.</td>
-                <td>No formal ownership of KPI board or review cadence.</td>
-                <td>Build simple trend views from safe data and structure a mini KPI section in reporting.</td>
-              </tr>
-              <tr>
-                <td><strong>People leadership</strong></td>
-                <td>Supports onboarding and troubleshooting now; previously led temps and coached teams in restaurant management.</td>
-                <td>No formal leadership title in current organization.</td>
-                <td>Document coaching moments and seek ownership of one process standard with visible follow-through.</td>
-              </tr>
-            </tbody>
-          </table>
         </div>
       </article>
 
-      <article id="templates" class="template-card" aria-labelledby="templates-title">
-        <div class="section-heading">
-          <div>
-            <span class="section-tag">Communication templates</span>
-            <h2 id="templates-title">Evidence-first communication that moves work</h2>
-          </div>
-        </div>
-        <div class="template-stack">
-          <section class="template">
-            <header>
-              <h3>Shift report template</h3>
-            </header>
-            <pre>Subject: Third Shift Indigo Summary – [Date]
+      <hr class="divider" style="margin:1.75rem 0;">
+
+      <h3 style="font-family:var(--font-display); font-size:var(--text-xl); margin-bottom:1rem;">Communication templates</h3>
+
+      <div class="template-box">
+        <div class="template-header">Shift report template</div>
+        <div class="template-body">Subject: Third Shift Indigo Summary – [Date]
 
 Output
 - Jobs completed: [#]
@@ -896,7 +1048,6 @@ Output
 - Priority work completed: [brief summary]
 
 Delays / constraints
-- [Issue] – [minutes impact] – [owner / follow-up needed]
 - [Issue] – [minutes impact] – [owner / follow-up needed]
 
 Material / file / ticket exceptions
@@ -913,14 +1064,12 @@ Actions taken
 - [What was corrected, rerouted, or escalated]
 
 Next-shift priorities
-- [Highest-risk or highest-priority items first]</pre>
-          </section>
+- [Highest-risk or highest-priority items first]</div>
+      </div>
 
-          <section class="template">
-            <header>
-              <h3>Escalation email template</h3>
-            </header>
-            <pre>Subject: POD Exceptions Requiring Morning Follow-Up – [Date]
+      <div class="template-box">
+        <div class="template-header">Escalation email template</div>
+        <div class="template-body">Subject: POD Exceptions Requiring Morning Follow-Up – [Date]
 
 Team,
 
@@ -932,45 +1081,172 @@ Below is the consolidated list of POD items requiring follow-up from third shift
 - Needed action: [who needs to correct what]
 - Shift impact: [brief note]
 
-2. [Job / item category]
-- Issue: [description]
-- Current status: [description]
-- Needed action: [description]
-- Shift impact: [description]
-
 Hot items escalated separately to prepress / account owner are noted here for visibility.
-Please update once corrected so work can be released or completed without additional handoff loss.
+Please update once corrected so work can be released without additional handoff loss.
 
 Thanks,
-Kayla</pre>
-          </section>
-        </div>
-      </article>
+Kayla</div>
+      </div>
     </section>
 
-    <section id="fit" aria-labelledby="fit-title">
-      <div class="footer-card">
-        <div>
-          <span class="section-tag">Role fit</span>
-          <h2 id="fit-title">Why this transition makes sense now</h2>
-          <p>I am not presenting myself as someone who already owns the full plant schedule or ERP architecture. I am presenting myself as someone already doing the operator-side work the right way: disciplined transactions, strong documentation, queue thinking, inventory awareness, and a habit of converting recurring problems into cleaner systems.</p>
-          <p class="print-note"></p>
+    <hr class="divider">
+
+    <!-- ── KPIs & REPORTING ── -->
+    <section class="section" id="kpi">
+      <div class="section-eyebrow">KPIs &amp; Reporting</div>
+      <h2 class="section-title">Reading the metrics that actually tell the story</h2>
+      <p class="section-lead">Impressions per hour and total impressions are the standard output metrics — but on a high-mix short-run shift, they don't capture what the shift actually produced. I pull metrics directly from the HP press interface to show my workload and job volume in context, and I know how to read past the surface number.</p>
+
+      <div class="overview-grid">
+        <div class="overview-card">
+          <div class="label">Current practice</div>
+          <div class="value">Pull press performance data from the HP interface to display shift workload and volume relative to other shifts. Total impressions alone never tells the full story on a high-changeover, short-run queue.</div>
+        </div>
+        <div class="overview-card">
+          <div class="label">Reporting habits</div>
+          <div class="value">Daily shift report captures output, delays, material and ticket exceptions, downstream handoff status, and next-shift priorities. Escalation emails give the scheduler actionable detail before first shift arrives.</div>
+        </div>
+        <div class="overview-card">
+          <div class="label">Prior analytics</div>
+          <div class="value">Daily and monthly administrative reporting in the paper/logistics role. Bookkeeping for classifieds. Financial reporting and bank deposits in restaurant management.</div>
+        </div>
+        <div class="overview-card">
+          <div class="label">Development area</div>
+          <div class="value">No formal ownership of a KPI dashboard or review cadence yet. The PSM1 coursework is building the framework to structure that thinking at a planning level.</div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ── SKILLS MATRIX ── -->
+    <section class="section" id="matrix">
+      <div class="section-eyebrow">Skills-gap matrix</div>
+      <h2 class="section-title">Current evidence vs. target-role requirements</h2>
+      <p class="section-lead">Mapped directly against the CL&amp;D / ProMach posting. Gaps are named plainly — the goal is to show what's real and where the development work still is.</p>
+
+      <div class="matrix-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Requirement</th>
+              <th>Current evidence</th>
+              <th>Gap</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>ERP super-user &amp; system ownership</strong></td>
+              <td>PACE daily (3+ yrs) — job start/end, pulls, counts, operation completion. PrintSmith end-to-end (2 yrs) with job scanning. 5+ yrs combined transactional fluency in print MIS platforms.</td>
+              <td><span class="gap-badge gap-mid">Partial</span> No formal configuration, routing setup, or dashboard ownership.</td>
+              <td>Position as a PACE/PrintSmith power user. Shadow planner logic. Volunteer for one controlled data-cleanup domain.</td>
+            </tr>
+            <tr>
+              <td><strong>Production planning &amp; capacity management</strong></td>
+              <td>Sequences 115–350 jobs per shift across two Indigos by due date, downstream path, stock, and press capability. Prior resource scheduling in the digital manager role.</td>
+              <td><span class="gap-badge gap-low">Thin</span> Does not yet own the master schedule or customer commitments.</td>
+              <td>Frame nightly sequencing in capacity language. Compare planned load vs. actual output.</td>
+            </tr>
+            <tr>
+              <td><strong>Scheduling logic &amp; master data governance</strong></td>
+              <td>Strong on scheduling logic — flags ticket errors, stock mismatches, and out-of-system inventory before jobs run. Identifies where system data breaks from floor reality.</td>
+              <td><span class="gap-badge gap-mid">Partial</span> No authority to fix master data at the configuration level.</td>
+              <td>Document data discrepancies systematically. Request access to one governed data domain for a controlled improvement project.</td>
+            </tr>
+            <tr>
+              <td><strong>People leadership &amp; coaching</strong></td>
+              <td>Managed 1–5 temps per shift at Quad/Graphics — new temps every night, shift-start training non-negotiable. Managed 5–10 employees in restaurant including interviews and coaching. Coordinated shared staff in digital manager role.</td>
+              <td><span class="gap-badge gap-low">Thin</span> No formal leadership title in current organization.</td>
+              <td>Document coaching moments and SOP hand-offs. Seek ownership of one process standard with visible follow-through.</td>
+            </tr>
+            <tr>
+              <td><strong>Process standardization &amp; CI</strong></td>
+              <td>Ongoing SOP authorship — writes SOPs as incidents occur, proposes to operations manager, passes practices to other operators. IND-001 as a documented example.</td>
+              <td><span class="gap-badge gap-low">Minimal</span> No formal CI program ownership or cross-facility scope yet.</td>
+              <td>Frame SOP pattern as systematic CI behavior. Connect each SOP to waste or penalty prevented.</td>
+            </tr>
+            <tr>
+              <td><strong>Inventory accuracy</strong></td>
+              <td>Verifies stock readiness each shift. Flags duplicates and out-of-system stock. Owned full inventory in digital manager role. Bi-annual cycle counts in logistics role. Weekly total inventory in restaurant management.</td>
+              <td><span class="gap-badge gap-low">Thin</span> Current role does not own full raw, WIP, or finished goods accuracy.</td>
+              <td>Make prior inventory ownership visible across all three roles. Track stock-related misses and connect them to schedule impact.</td>
+            </tr>
+            <tr>
+              <td><strong>Cross-functional communication</strong></td>
+              <td>Daily shift reports and escalation emails to scheduler, CSRs, prepress, bindery, and POD admin. Consistent upstream/downstream transparency across all roles listed. Strong written communication record.</td>
+              <td><span class="gap-badge gap-mid">Partial</span> Limited direct IT partnership experience on system issues.</td>
+              <td>Lead short huddles. Request post-issue debriefs. Seek IT-adjacent exposure through ERP data accuracy work.</td>
+            </tr>
+            <tr>
+              <td><strong>KPI &amp; reporting discipline</strong></td>
+              <td>Pulls HP press metrics to contextualize shift workload beyond raw impressions. Tracks counts, delays, and exceptions. Comfortable with CSV data and structured reporting formats.</td>
+              <td><span class="gap-badge gap-mid">Partial</span> No formal KPI board ownership or review cadence.</td>
+              <td>Build trend views from available press data. Structure a mini KPI section in shift reporting.</td>
+            </tr>
+            <tr>
+              <td><strong>Education &amp; credentials</strong></td>
+              <td>BS Communications (PR emphasis, health promotion minor). PSM1 candidate — coursework complete, exam pending. OSHA 30-Hour General Industry. AED/CPR current. Bloodborne pathogen certified.</td>
+              <td><span class="gap-badge gap-mid">Partial</span> Degree field is Communications, not the listed IT/Ops/Supply Chain/Engineering/Business.</td>
+              <td>Frame Communications directly: audience-aware documentation, structured escalation, and cross-functional writing are all PR competencies. PSM1 adds process ownership credential.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ── ROLE FIT ── -->
+    <section class="section" id="rolefit">
+      <div class="section-eyebrow">Role fit</div>
+      <h2 class="section-title">Why this transition makes sense now</h2>
+
+      <div class="fit-grid">
+        <div class="fit-prose">
+          <p>I'm not presenting myself as someone who already owns the full plant schedule or ERP architecture. I'm presenting myself as someone already doing the operator-side work the right way: disciplined transactions, strong documentation, queue thinking, inventory awareness, and a habit of converting recurring problems into cleaner systems.</p>
+          <p>The work history above represents 10+ years of moving closer to this role from the floor up — print production, supply chain logistics, inventory ownership, people leadership, and system discipline across multiple platforms and environments. The gaps are real and they're named plainly in the matrix. What's also real is the track record of picking up new systems and completing every available training when given the access to do it.</p>
+          <p>The PSM1 candidacy isn't a resume line — it's the current development investment. The same way I completed every course Quad/Graphics offered, I've worked through the PSM1 framework because structured process ownership is the next thing that needs to be formal, not just practiced.</p>
         </div>
         <div>
-          <ul>
-            <li><strong>Target role:</strong> ERP &amp; Production Planning Manager</li>
-            <li><strong>Current environment:</strong> Third-shift POD in high-mix, low-volume print manufacturing</li>
-            <li><strong>Press experience:</strong> HP Indigo 10000, HP Indigo 100K, and interim Komori Lithrone G40P support</li>
-            <li><strong>Best-known strengths:</strong> ERP discipline, inventory accuracy, documentation, written communication</li>
-            <li><strong>Current development focus:</strong> In-person communication presence</li>
+          <ul class="fit-list">
+            <li><strong>Target role:</strong> ERP &amp; Production Planning Manager — CL&amp;D / ProMach</li>
+            <li><strong>Location:</strong> Hartland, WI — local, no relocation needed</li>
+            <li><strong>Current environment:</strong> Third-shift POD, high-mix print manufacturing</li>
+            <li><strong>Press experience:</strong> HP Indigo 10000, HP Indigo 100K, Komori Lithrone G40P, inkjet web, inkjet envelope</li>
+            <li><strong>Systems:</strong> PACE, PrintSmith, HP press interface</li>
+            <li><strong>Strongest evidence:</strong> ERP discipline, inventory accuracy, SOP authorship, documentation, written communication</li>
+            <li><strong>Active development:</strong> PSM1 certification, in-person leadership presence</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <footer>
-      I'm still on the floor. That's the point. The sequencing habits, the PACE discipline, the end-of-shift documentation — I didn't develop those because I was preparing for something. I developed them because the shift runs better that way. If that's the kind of thinking you want closer to your planning table, I'd like to talk.
+    <!-- ── FOOTER ── -->
+    <footer class="site-footer">
+      <p class="footer-quote">"I'm still on the floor. That's the point. The sequencing habits, the PACE discipline, the end-of-shift documentation — I didn't develop those because I was preparing for something. I developed them because the shift runs better that way. If that's the kind of thinking you want closer to your planning table, I'd like to talk."</p>
+      <p class="footer-meta">Sanitized portfolio content for ERP and production planning interviews in print manufacturing · Kayla Ann De Priest · Hartland, WI</p>
     </footer>
+
   </main>
+
+  <script>
+    // Scroll spy — highlight active nav link
+    const sections = document.querySelectorAll('.section');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(l => l.classList.remove('active'));
+          const id = entry.target.id;
+          const match = document.querySelector(`.nav-link[href="#${id}"]`);
+          if (match) match.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+
+    sections.forEach(s => observer.observe(s));
+  </script>
 </body>
 </html>
